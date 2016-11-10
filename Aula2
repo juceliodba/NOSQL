@@ -1,0 +1,38 @@
+/*Criando e inserindo dados no MongoDB*/
+
+> db.alunos.insert({"nome": "Jucelio Marques", "DataNasc":ISODate("1985-12-25"),"Discplina":"Banco NOSQL"}) 
+WriteResult({ "nInserted" : 1 })
+> db.alunos.insert({"nome": "Tiago Silva", "DataNasc":ISODate("1986-03-02"),"Discplina":"Banco NOSQL"})
+WriteResult({ "nInserted" : 1 })
+> db.alunos.insert({"nome": "Viviane Santos", "DataNasc":ISODate("1992-03-02"),"Discplina":"Banco NOSQL"})
+WriteResult({ "nInserted" : 1 })
+
+
+/*Pesquisando pessoa com menor data de nascimento*/
+
+> db.alunos.find({}).sort({DataNasc:1}).limit(1)
+{ "_id" : ObjectId("5824f4dc68d837e1f29ec31e"), "nome" : "Jucelio Marques", "DataNasc" : ISODate("1985-12-25T00:00:00Z"), "Discplina" : "Banco NOSQL" }
+
+/*Atualizando minha nota na disciplina Banco NOSQL*/
+
+> db.alunos.update({"nome":"Jucelio Marques"},{$set:{"nota":5}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+
+
+/*Listando objeto alterado*/
+> db.alunos.find({})
+{ "_id" : ObjectId("5824f4dc68d837e1f29ec31e"), "nome" : "Jucelio Marques", "DataNasc" : ISODate("1985-12-25T00:00:00Z"), "Discplina" : "Banco NOSQL", "nota" : 5 }
+
+
+/*Deletando um dos colegas*/
+
+db.alunos.remove({"nome":"Tiago Silva"})
+WriteResult({ "nRemoved" : 1 })
+> db.alunos.find({})
+{ "_id" : ObjectId("5824f4dc68d837e1f29ec31e"), "nome" : "Jucelio Marques", "DataNasc" : ISODate("1985-12-25T00:00:00Z"), "Discplina" : "Banco NOSQL", "nota" : 5 }
+{ "_id" : ObjectId("5824f54d68d837e1f29ec320"), "nome" : "Viviane Santos", "DataNasc" : ISODate("1992-03-02T00:00:00Z"), "Discplina" : "Banco NOSQL" }
+> 
+
+
+https://github.com/juceliodba/NOSQL.git
