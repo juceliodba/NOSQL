@@ -1,0 +1,63 @@
+A:
+
+var map = function(){
+	emit(this.text.substring(this.text.length-2,this.text.length),1);
+}
+
+var reduce = function(key, values){
+	return Array.sum(values);
+}
+
+db.Vocabulary.mapReduce(map,reduce,{query:
+{
+		text:  /((ar)|(er)|(ir))$/
+}
+ , out:"resultado"})
+
+
+db.resultado.find()
+{ "_id" : "ar", "value" : 2950 }
+{ "_id" : "er", "value" : 2342 }
+{ "_id" : "ir", "value" : 554 }
+
+
+B:
+
+var map = function(){
+	if (this.text == undefined) return; 
+
+	for (var letra = 0; letra < this.text.length; letra++){ 
+		  emit(this.text[letra], 1);
+	}
+}
+
+var reduce = function(key, value){
+	return Array.sum(value);
+}
+
+db.Vocabulary.mapReduce(map, reduce, {query:{}, out:"Resultado"})
+
+ db.Resultado.find().pretty()
+{ "_id" : "!", "value" : 344 }
+{ "_id" : "#", "value" : 11110 }
+{ "_id" : "$", "value" : 220 }
+{ "_id" : "%", "value" : 127 }
+{ "_id" : "&", "value" : 2 }
+{ "_id" : "(", "value" : 6 }
+{ "_id" : ")", "value" : 8 }
+{ "_id" : "*", "value" : 7 }
+{ "_id" : ",", "value" : 58 }
+{ "_id" : "-", "value" : 17 }
+{ "_id" : ".", "value" : 83708 }
+{ "_id" : "/", "value" : 241469 }
+{ "_id" : "0", "value" : 21943 }
+{ "_id" : "1", "value" : 24276 }
+{ "_id" : "2", "value" : 20777 }
+{ "_id" : "3", "value" : 17791 }
+{ "_id" : "4", "value" : 16930 }
+{ "_id" : "5", "value" : 16626 }
+{ "_id" : "6", "value" : 16037 }
+{ "_id" : "7", "value" : 16950 }
+Type "it" for more
+
+
