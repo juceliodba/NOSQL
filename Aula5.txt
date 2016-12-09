@@ -1,0 +1,17 @@
+Exercicio 1
+
+Por sermos bons programadores e por saber o objetivo da infra estrutura, por se tratar de grande quantidade de dados, muita das vezes sem um tipo de dado definido, aplicações para lidar com IoT sai da T.I tradicional, principalmente pensando a longo prazo.
+
+Arquitetura para suportar estes dados, utilizaria Hadoop para armazenar arquivos, ja tratando a questão de duplicidade em clusters diferentes, claro que para arquivos de grande importancia no negocio. Para dados que precisam de uma rapida inserção, manipulação e seleção, utilizo o MONGODB uma vez que, o desenvolvimento de aplicações é mais simples e dinamico, não possui diversas constraints se comparamdo com Bancos de Dados tradicionais, desta forma ganho em rapido armazenamento e me garante uma rapida localização, visualização, inserção, manipulação dos dados agora e no futuro.
+
+Exercicio 2
+
+Dentro da empresa que trabalho existem sim pontos que podem ser adpatados uma melhor performance, uma melhor maneira de ligar com grandes volumes de dados, desta forma, existe a possibilidade de mudar parte da arquitetura utilizada a fim de ganhar desempenho principalmente na localização dos dados hoje armazenados em Bancos de Dados Tradicionais.
+
+A empresa que trabalho utiliza SGBD transacional, possuimos cerca de 30 mil clientes utilizando nossa solução de ERP, constatemente existe a necessidade destes clientes abrirem chamados solicitando ajuda, tirando dúvidas em como proceder da melhor forma com as mais diversas aplicações que possuimos e vendemos diariamente. 
+
+Neste contexto, o volume de dados que vem destes chamados crescem cada dia mais, sendo necessário diversas rotinas a fim de diminuir a quantidade de dados nas tabelas que com o passar do tempo gera lentidão principalmente no momento de localizar dados neste montante de Dados.
+
+Pensando em melhorar principalemnte a forma de localizar palavras nos textos que nossos clientes escrevem na abertura de seus chamados, hoje consigo ver, perceber que existem soluções que melhor atende estas demandas que muita das vezes, demoram cerca de 20 minutos para trazer os dados solicitados.
+
+Após o conhecimento de novas tecnologias, no banco de dados no-sql por exemplo o MONGODB ajudaria bastante nesta tarefa que a cada dia se torna mais complicada a forma de localizar dados. Estamos levantandos mais argumentos e possiveis melhores soluções para tradar esta deficiência encontrada diariamete na empresa, a ideia é colocarmos um banco de dados NOSQL para fazer os devidos testes, se alcançarmos um bom indicador, será aplicado para outras partes da empresa que sofrem principalmente com problemas de performance.
